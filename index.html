@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>web6</title>
+        <script src="script.js" defer></script>
+    </head>
+	<body>
+            <p>Введите стоимость: <input type="text" placeholder="Введи цену"  id="a"></p>
+            <p>Введите количество: <input type="text" placeholder="Введи кол-во"  id="b"></p>
+            <button onclick="multiplication() ">Результат</button>
+        <hr>
+        <p id="out"></p>
+            <hr>
+
+            <div class="сontainer">
+                <form>
+                    <p>Количество товара: <input type="text" name="number" placeholder="Количество"></p>
+                    Тип товара:
+                    <select name="prodType">
+                        <option value="0">Сборка ПК</option>
+                        <option value="1">Комплектующие к ПК</option>
+                        <option value="2">Периферия</option>
+                    </select>
+
+                    <div id="radios">
+                        <label><input type="radio" name="prodOptions" value="option1"> Процессор </label>
+                        <label><input type="radio" name="prodOptions" value="option2"> Мат.плата </label>
+                        <label><input type="radio" name="prodOptions" value="option3"> Блок питания </label>
+                    </div>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" name="prop1"> Монитор </label>
+                        <label><input type="checkbox" name="prop2"> Клавиатура </label>
+                        <label><input type="checkbox" name="prop3"> Комп.мышь</label>
+                    </div>
+                    <br>
+                    <button id="butt" onclick="return calcu();"> Результат </button>
+                    <div id="prodPrice"></div>
+                </form>
+                <hr>
+                <div id="result"> </div>
+            </div>
+            <script src="script.js"></script>
+
+    </body>
+</html>
