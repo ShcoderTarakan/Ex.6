@@ -6,8 +6,8 @@ function multiplication()
     num2 = document.getElementById('b').value;
     num2 = parseInt(num2);
     let reg = /[A-Za-zА-Яа-яЁё]/g;
-    const reg1 =/^[1-9][0-9]*$/;
-    if(reg.test(num1)||reg.test(num2))
+    const reg1=/^[1-9][0-9]*$/;
+    if(reg1.test(num1)||reg1.test(num2))
     {
         alert('Вводить можно только положительные числа!');
     }
@@ -16,7 +16,7 @@ function multiplication()
         alert('Введите значения!');
     }
     rezult = num1*num2;
-    if(!reg1.test(num1)||!reg1.test(num2))
+    if(!reg.test(num1)||!reg.test(num2))
     {
         alert('Ошибка! Вводите только положительные числа , которые больше 0!');
         let str = "Ошибка!";
@@ -33,21 +33,27 @@ window.addEventListener('DOMContentLoaded', function(multiplication) {
     b.addEventListener("click",multiplication);
 });
 function calcu() {
-    const proverka = /^-+\d+$|\d+$/;
+    const proverka = /^\d+$|\d+$/;
     let x = document.getElementById("prodPrice").innerHTML;
-    const re = /[0-9/.]+/;
+    const re = /[1-9/.]+/;
     let first = x.match(re);
     console.log();
     let b = document.getElementsByName("number");
     if (proverka.test(first) == false || proverka.test(b[0].value) == false) {
         alert("Вы сделали что-то не так!");
-    } else {
+    }
+    else {
         let c = document.getElementById("result");
         first[0] = Number.parseInt(first[0]);
         b[0] = Number.parseInt(b[0]);
         var res = first * b[0].value;
-        c.innerHTML = "Итого: " + Math.abs(res);
-        return false;
+        if(res<=0){
+            alert('Ошибка! Вводите только положительные числа , которые больше 0!');
+        }
+        else {
+            c.innerHTML = "Итого: " + res;
+            return false;
+        }
     }
 }
 function getPrices() {
